@@ -1,9 +1,9 @@
 let initialState = {
-  players: [
-    { name: "Ryan", position: "P", bats: "R", throws: "R" },
-    { name: "George", position: "1B", bats: "R", throws: "L" }
-  ]
+  players: { count: 0, results: [] },
+  teams: { count: 0, results: [] }
 };
+
+// let initialState = { results: [] };
 
 export default (state = initialState, action) => {
   let { type, payload = {} } = action;
@@ -11,6 +11,7 @@ export default (state = initialState, action) => {
 
   switch (type) {
     case "GET":
+      // return payload;
       return { ...state, [model]: records };
 
     case "POST":

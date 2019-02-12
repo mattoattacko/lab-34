@@ -6,6 +6,8 @@ import superagent from "superagent";
 
 import * as actions from "./actions.js";
 
+// const schema = {}
+
 const uiSchema = {
   _id: { "ui:widget": "hidden" },
   __v: { "ui:widget": "hidden" }
@@ -14,7 +16,16 @@ const uiSchema = {
 class Record extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = { id: null, schema: {} };
     this.state = { schema: {} };
+  }
+
+  async componentDidMount() {
+    let url = `https://javascript-401-api.herokuapp.com/api/v1/${
+      this.props.model
+    }/schema`;
+    let data = await superagent.get(url);
+    this.setState({ schema: data.body });
   }
 
   resetPlayer = id => {
@@ -39,7 +50,12 @@ class Record extends React.Component {
     return (
       <div>
         <h3>Edit Record {this.props.id}</h3>
-        <Form schema={this.state.schema} uiSchema={uiSchema} formData={this.props.records[this.props.model][this.props.id]} onSubmit={this.handleSubmit} />
+        <Form
+          schema={this.state.schema}
+          uiSchema={uiSchema}
+          formData={this.props.records[this.props.model][this.props.id]}
+          onSubmit={this.handleSubmit}
+        />
       </div>
     );
   }
@@ -50,9 +66,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
-  handlePost: payload => dispatch(actions.postResource(payload)),
+  handlePost: (model, record) => dispatch(actions.postResource(model, record)),
   handlePut: payload => dispatch(actions.put(payload)),
-  handlePatch: payload => dispatch(actions.patch(payload))
+  handlePatch: payload => dispatch(actions.patch(payload)),
+  getSchema: model => dispatch(actions.getSchema)
 });
 
 export default connect(

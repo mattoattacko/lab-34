@@ -13,6 +13,10 @@ class Records extends React.Component {
     this.state = { id: null };
   }
 
+  componentDidMount() {
+    this.props.getAll(this.props.model);
+  }
+
   deleteRecord = id => {
     this.props.handleDelete({ model: this.props.model, id: id });
   };
@@ -31,7 +35,7 @@ class Records extends React.Component {
       <div className={style}>
         <button onClick={this.reset}>Add New</button>
         <ul className={style.list}>
-          {this.props.records[this.props.model].map((record, idx) => (
+          {this.props.records[this.props.model].results.map((record, idx) => (
             <li key={idx}>
               {record.name}
               <button onClick={() => this.editRecord(idx)}>Edit</button>
@@ -50,6 +54,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
+  handlePost: record => dispatch(actions.postResource(record)),
+  getAll: model => dispatch(actions.getAll(model)),
   handleDelete: id => dispatch(actions.destroy(id))
 });
 

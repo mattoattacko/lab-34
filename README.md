@@ -8,8 +8,8 @@
 
 - [repo](http://xyz.com)
 - [travis](http://xyz.com)
-- [back-end](http://xyz.com)
-- [front-end](http://xyz.com)
+- [back-end](https://codesandbox.io/s/ol0vovwx8q)
+- [front-end](https://ol0vovwx8q.codesandbox.io/)
 
 ### Modules
 
