@@ -1,25 +1,21 @@
 # ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 
-## Project Name
+## Lab 34: Where the Baseball At!?
 
-### Author: Student/Group Name
+### Author: Matthew McQuain, et al.
 
 ### Links and Resources
 
-- [repo](http://xyz.com)
-- [travis](http://xyz.com)
-- [back-end](https://codesandbox.io/s/ol0vovwx8q)
-- [front-end](https://ol0vovwx8q.codesandbox.io/)
+- [repo](https://github.com/mattoattacko/lab-34)
+- [Application Back End](https://codesandbox.io/s/ol0vovwx8q)
+- [Application Front-End](https://ol0vovwx8q.codesandbox.io/)
 
 ### Modules
 
-#### `modulename.js`
+###### `Main()`
 
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-
-Usage Notes or examples
+- Access to Redux is given by wrapping the application component in the store
+- --> App Component
 
 ###### `bar(array) -> array`
 
