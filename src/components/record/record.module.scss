@@ -1,5 +1,20 @@
-.record {
+@import url("https://fonts.googleapis.com/css?family=Abel");
+$bleed: 0.5em;
+$space: 2em;
+$offwhite: #fafafa;
+
+* {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
+
+html {
+  background: url("http://www.leessports.net/wp-content/uploads/2017/06/lees_sports_about_us_Paralax-2.jpg");
+}
+
+// .record {
+//   color: #fff;
+// }
 
 .list {
   list-style-type: square;

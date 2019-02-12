@@ -1,5 +1,4 @@
 import React from "react";
-
 import RecordList from "./record/list.js";
 
 class App extends React.Component {
