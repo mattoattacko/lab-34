@@ -1,10 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-
 import style from "./record.module.scss";
-
 import Record from "./record.js";
-
 import * as actions from "./actions.js";
 
 class Records extends React.Component {
@@ -33,7 +30,7 @@ class Records extends React.Component {
   render() {
     return (
       <div className={style}>
-        <button onClick={this.reset}>Add New</button>
+        <button onClick={this.reset}>Add Another</button>
         <ul className={style.list}>
           {this.props.records[this.props.model].results.map((record, idx) => (
             <li key={idx}>

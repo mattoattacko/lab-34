@@ -3,15 +3,12 @@ let initialState = {
   teams: { count: 0, results: [] }
 };
 
-// let initialState = { results: [] };
-
 export default (state = initialState, action) => {
   let { type, payload = {} } = action;
   let { id, model, record, records } = payload;
 
   switch (type) {
     case "GET":
-      // return payload;
       return { ...state, [model]: records };
 
     case "POST":

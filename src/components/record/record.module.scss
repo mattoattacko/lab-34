@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Abel");
-$bleed: 0.5em;
-$space: 2em;
-$offwhite: #fafafa;
-
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: Impact, Charcoal, sans-serif;
   text-align: center;
+}
+
+h2,
+h3 {
+  text-shadow: 2px 2px #00ffd5;
+  font-size: 28px;
 }
 
 html {

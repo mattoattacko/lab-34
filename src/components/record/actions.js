@@ -1,5 +1,7 @@
 import superagent from "superagent";
 
+// Just use the original idea
+
 const API = "https://javascript-401-api.herokuapp.com/api/v1";
 
 export const getAll = model => dispatch => {

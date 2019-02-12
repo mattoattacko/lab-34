@@ -1,12 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-
 import Form from "react-jsonschema-form";
 import superagent from "superagent";
-
 import * as actions from "./actions.js";
-
-// const schema = {}
 
 const uiSchema = {
   _id: { "ui:widget": "hidden" },
@@ -16,7 +12,6 @@ const uiSchema = {
 class Record extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = { id: null, schema: {} };
     this.state = { schema: {} };
   }
 
